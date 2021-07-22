@@ -29,7 +29,7 @@ jobs:
       run: | 
         cp update.py update2.py
         echo $CONFIG_KEY > mykey.txt
-        sed -i '3 r mykey.txt' update.py
+        sed -i '3 r mykey.txt' update2.py
     - name: Chay chuong trinh
       run: | 
         python update2.py
