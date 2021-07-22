@@ -1,0 +1,49 @@
+name: Cap nhat code trang web ma hoa
+
+on: 
+  release:
+    types: [published]
+  push:
+    tags:
+    - 'v*'
+
+  schedule:
+    - cron: '* 23 * * *'
+  watch:
+    types: [started]
+   
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+    - name: Thuc hien thu tuc
+      uses: actions/checkout@master
+    - name: Cai dat Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Lay thong tin cau hinh rieng
+      env: 
+        CONFIG_KEY: ${{ secrets.CONFIG_KEY }}
+      run: | 
+        cp update.py update2.py
+        echo $CONFIG_KEY > mykey.txt
+        sed -i '3 r mykey.txt' update.py
+    - name: Chay chuong trinh
+      run: | 
+        python update2.py
+    - name: Xoa thong tin cau hinh rieng
+      run: | 
+        rm -f update2.py
+        rm -f mykey.txt
+- name: Gui thong tin cap nhat
+      run: |
+        git config --global user.email bankhonggioi@gmail.com
+        git config --global user.name databkog
+        git add .
+        git commit -m "cap nhat code trang ma hoa" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
