@@ -829,7 +829,9 @@ function onSearchResultItemClick(a_ele) {
     } else if (teamDriveId == window.drive_ids[73]) {
         var searchhost = "/73";
     } else if (teamDriveId == window.drive_ids[74]) {
-        var searchhost = "/77";  
+        var searchhost = "/74";
+    } else if (teamDriveId == window.drive_ids[75]) {
+        var searchhost = "/75";    
     } else {
         var searchhost = "/0";
     }
