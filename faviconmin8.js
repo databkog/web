@@ -831,7 +831,19 @@ function onSearchResultItemClick(a_ele) {
     } else if (teamDriveId == window.drive_ids[74]) {
         var searchhost = "/74";
     } else if (teamDriveId == window.drive_ids[75]) {
-        var searchhost = "/75";    
+        var searchhost = "/75";
+    } else if (teamDriveId == window.drive_ids[76]) {
+        var searchhost = "/76";
+    } else if (teamDriveId == window.drive_ids[77]) {
+        var searchhost = "/77";
+    } else if (teamDriveId == window.drive_ids[78]) {
+        var searchhost = "/78";
+    } else if (teamDriveId == window.drive_ids[79]) {
+        var searchhost = "/79";
+    } else if (teamDriveId == window.drive_ids[80]) {
+        var searchhost = "/80";
+    } else if (teamDriveId == window.drive_ids[81]) {
+        var searchhost = "/81";  
     } else {
         var searchhost = "/0";
     }
