@@ -178,10 +178,7 @@ function nav(path) {
     }
 
     html += `</div></li><li class="nav-item">
-    <a class="nav-link" href="${UI.hd_download}" target="_blank">Hướng dẫn download</a>
-</li>`;
-html += `<li class="nav-item">
-  <a class="nav-link" href="${UI.hd_xemonline}" target="_blank">Hướng dẫn xem Online</a>
+    <a class="nav-link" href="${UI.hd_download}" target="_blank">Liên hệ</a>
 </li>`;
 
     var search_text = model.is_search_page ? (model.q || '') : '';
